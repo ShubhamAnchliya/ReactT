@@ -1,0 +1,18 @@
+import { Routes, Route, Navigate, Outlet } from "react-router-dom";
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/public" element={<PublicPage />} />
+      <Route path="/protected" element={<RequireAuth redirectTo="/login" />}>
+        <Route index element={<ProtectedPage />} />
+        <Route path="details" element={<SecondProtectedPage />} />
+      </Route>
+    </Routes>
+  );
+}
+
+function RequireAuth({ redirectTo }) {
+  let isAuthenticated = getAuth();
+  return isAuthenticated ? <Outlet /> : <Navigate to={redirectTo} />;
+}

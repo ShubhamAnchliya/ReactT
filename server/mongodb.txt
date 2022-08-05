@@ -1,0 +1,13 @@
+
+shubham
+123456s
+
+
+
+mongodb+srv://shubham:123456s@cluster0.qvmjr.mongodb.net/reacttempcrud?retryWrites=true&w=majority
+
+
+
+PORT = 5000
+
+MongoDB_URL =mongodb+srv://shubham:123456s@cluster0.qvmjr.mongodb.net/reacttempcrud?retryWrites=true&w=majority
