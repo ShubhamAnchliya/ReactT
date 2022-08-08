@@ -25,11 +25,13 @@ const EmployeeSchema = new mongoose.Schema({
     mobile: {
         type: Number,
         required: [true, "Please enter your mobile number"],
+       
+
     },
-    address: {
-        place: {
+    // address: {
+        addressLine: {
             type: String,
-            required: [true, "Please enter your place"],
+            required: [true, "Please enter your addressLine"],
             default: ""
         },
         city: {
@@ -51,22 +53,33 @@ const EmployeeSchema = new mongoose.Schema({
             type: String,
             required: [true, "Please enter your pincode"],
             default: ""
-        }          
-    },
-    age: { 
-        type: Number, 
-        min: 18,
-        index: true 
-    },
+        }  ,        
+    // },
+    // age: { 
+    //     type: Number, 
+    //     min: 18,
+    //     required: [true, "Please enter your age"],
+    //     default: "",
+    //     index: true 
+    // },
     role: {
         type: String,
         enum : ['employee','admin'],
         default: 'employee'
     },
-    dateofjoining: {
-        type: Date,
-        default: Date.now,
-      },
+    branch: { 
+        type: String,    
+        required: [true, "Please enter your branch"],
+        default: ""          
+    },
+    // dob: {
+    //     type: Date,
+    //     default: Date.now,
+    //   },
+    // dateofjoining: {
+    //     type: Date,
+    //     default: Date.now,
+    //   },
 
     
 
