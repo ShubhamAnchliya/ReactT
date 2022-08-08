@@ -4,7 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 {/* <link href="../../../assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" /> */}
 
 
-const EmployeeData = () => {
+const EmployeeList = () => {
   return (
     <>
 
@@ -19,15 +19,16 @@ const EmployeeData = () => {
                 </div>
                 <div class="m-portlet__head-tools">
                     <ul class="m-portlet__nav">
+
                         <li class="m-portlet__nav-item">
-                            <Link to="addrecord" class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
+                            <Link to="/addemployee" class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
                                 <span>
                                     <i class="la la-plus"></i>
                                     <span>New record</span>
                                 </span>
-                            </Link>
-                           
+                            </Link>                           
                         </li>
+
                         <li class="m-portlet__nav-item"></li>
                         <li class="m-portlet__nav-item">
                             <div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="hover" aria-expanded="true">
@@ -770,4 +771,4 @@ const EmployeeData = () => {
   )
 }
 
-export default EmployeeData;
+export default EmployeeList;

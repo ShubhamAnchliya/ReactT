@@ -7,15 +7,17 @@ import Footer from './Components/Footer/Footer';
 import Sidebar from './Components/Sidebar/Sidebar';
 import SubHeader from './Components/SubHeader/SubHeader';
 import MainRoutes from './Components/MainRoutes/MainRoutes';
-import { Outlet, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min.js';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
-import EmployeeData from './Pages/EmployeeData/EmployeeData';
+
 import QuickSidebar from './Components/QuickSidebar/QuickSidebar';
-import AddRecord from './Pages/AddRecord/AddRecord';
+
+import AddEmployee from './Pages/AddEmployee/AddEmployee';
+import EmployeeList from './Pages/EmployeeList/EmployeeList';
 // import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 
@@ -63,11 +65,13 @@ function App() {
                     <Route path="/home" element={<Home/>} />
                     <Route path="/about" element={<About/>} />
 
-                    <Route path="/employeedata" element={<EmployeeData/>} >
+                    <Route path="/employeelist" element={<EmployeeList/>} />
 
-                      <Route path="addrecord" element={<AddRecord/>} />
+                    <Route path="/addemployee" element={<AddEmployee/>} />
 
-                    </Route>
+                    
+
+                 
 
                     <Route path="/*" element={<ErrorPage/>} />
 

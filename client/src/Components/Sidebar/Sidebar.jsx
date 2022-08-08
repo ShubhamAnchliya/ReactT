@@ -31,12 +31,25 @@ const Sidebar = () => {
                     </Link>
                 </li>
 
+
                 <li className="m-menu__item  m-menu__item--active" aria-haspopup="true">
-                    <Link to="/employeedata" className="m-menu__link ">
+                    <Link to="/addemployee" className="m-menu__link ">
                         <i className="m-menu__link-icon flaticon-line-graph"></i>
                         <span className="m-menu__link-title">
                             <span className="m-menu__link-wrap"> 
-                                <span className="m-menu__link-text">Employee Data</span>
+                                <span className="m-menu__link-text">Add Employee </span>
+                            </span>
+                        </span>
+                    </Link>
+                </li>
+
+
+                <li className="m-menu__item  m-menu__item--active" aria-haspopup="true">
+                    <Link to="/employeelist" className="m-menu__link ">
+                        <i className="m-menu__link-icon flaticon-line-graph"></i>
+                        <span className="m-menu__link-title">
+                            <span className="m-menu__link-wrap"> 
+                                <span className="m-menu__link-text">Employee List</span>
                             </span>
                         </span>
                     </Link>

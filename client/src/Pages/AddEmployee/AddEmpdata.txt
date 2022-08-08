@@ -1,0 +1,117 @@
+import React from 'react';
+import "./AddEmployee.css";
+
+const AddEmployee = () => {
+  return (
+    <>
+
+          <div className="col-lg-6">
+
+         
+            <div className="m-portlet">
+
+              <div className="m-portlet__head">
+                <div className="m-portlet__head-caption">
+                  <div className="m-portlet__head-title">
+                    <span className="m-portlet__head-icon m--hide">
+                      <i className="la la-gear"></i>
+                    </span>
+                    <h3 className="m-portlet__head-text">
+                      Employee Details Form
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
+             
+              <form className="m-form m-form--fit">
+
+                <div className="m-portlet__body">
+
+                  <div className="m-form__section m-form__section--first">
+
+                    <div className="m-form__heading">
+                      <h3 className="m-form__heading-title">Add Employee Details:</h3>
+                    </div>
+
+                    <div className="form-group m-form__group">
+                      <label htmlFor="example_input_full_name">First Name:</label>
+                      <input type="text" className="form-control m-input" placeholder="Enter first name" />
+                      {/* <span className="m-form__help">Please enter your full name</span> */}
+                    </div>
+
+                    <div className="form-group m-form__group">
+                      <label htmlFor="example_input_full_name">Last Name:</label>
+                      <input type="text" className="form-control m-input" placeholder="Enter last name" />
+                      {/* <span className="m-form__help">Please enter your full name</span> */}
+                    </div>
+
+                    <div className="form-group m-form__group">
+                      <label>Email address:</label>
+                      <input type="email" className="form-control m-input" placeholder="Enter email" />
+                      {/* <span className="m-form__help">We'll never share your email with anyone else</span> */}
+                    </div>
+
+                    <div className="form-group m-form__group">
+                      <label>Contact:</label>
+                      <div className="m-input-icon m-input-icon--left">
+
+                        <input type="text" className="form-control m-input" placeholder="Phone number" />
+                        <span className="m-input-icon__icon m-input-icon__icon--left"><span><i className="la la-bell"></i></span></span>
+                      
+                      </div>
+                      {/* <span className="m-form__help">We'll never share your email with anyone else</span> */}
+                    </div>
+
+                    <div class="m-form__group form-group">
+
+													<label for="">Role:</label>
+
+													<div class="m-checkbox-list">
+
+														<label class="m-checkbox">
+															<input type="checkbox" /> Employee            
+															<span></span> 
+														</label>
+
+                            <label class="m-checkbox">
+															<input type="checkbox" /> Admin
+                              
+															<span></span> 
+														</label>
+
+													</div>
+                    </div>
+
+                    
+
+              
+
+                  </div>
+
+                 
+
+                </div>
+
+                <div className="m-portlet__foot m-portlet__no-border m-portlet__foot--fit">
+
+                  <div className="m-form__actions m-form__actions--solid">
+                    <button type="reset" className="btn btn-success">Submit</button>
+                    <button type="reset" className="btn btn-secondary">Cancel</button>
+                  </div>
+
+                </div>
+
+              </form>
+
+            </div>
+
+       
+          </div>
+
+        
+    </>
+  )
+}
+
+export default AddEmployee;
