@@ -36,15 +36,37 @@ exports.getAllEmployee = (req, res) => {
 
 
 
-exports.updateEmployee =  (req, res) => {
-    Employee.findByIdAndUpdate(req.params.id, req.body)
+
+exports.getEmployeeById =  (req, res) => {
+    const id = req.params.id;
+    Employee.findById(id)
         .then((employee) => {
          
-          console.log({ updatedData });
+          console.log({ employee });
+          return res.status(200).json({employee});
+        })
+        .catch((err) => {
+            res.status(404).json({
+                message: "Sorry cannot get Employee by insereted id ",
+                error: err.message 
+            });
+        });
+};
+
+
+
+exports.updateEmployee =  (req, res) => {
+
+    const id = req.params.id;
+
+    Employee.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+        .then((employee) => {
+         
+        //   console.log({ updatedData });
           return res.status(200).json({                
     
                 message: "Employee details have successfully updated",
-                employee,
+                // employee,
             });
         })
         .catch((err) => {

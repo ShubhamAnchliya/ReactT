@@ -132,7 +132,7 @@ import axios from "axios";
 
 const AddEmployee = () => {
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [employee, setEmployee] = useState({
 
@@ -190,9 +190,11 @@ const AddEmployee = () => {
     .post("http://localhost:5000/api/employee/add", employee)
     .then((res) => {     
 
-      console.log(res.data.message);
+      console.log("resDataMessage",res.data.message);
+
       // setEmployee({ ...employee: "" });
 
+      setEmployee('');
       
     })
     .catch((err) => {
@@ -200,7 +202,7 @@ const AddEmployee = () => {
       console.log(err.message);
     });
 
-       // navigate("/employeelist");
+       navigate("/employees");
 
   }
 
@@ -607,7 +609,7 @@ const AddEmployee = () => {
 
                         <div className="col-lg-4 m--align-left">
 
-                          <Link to="/employeelist" className="btn btn-secondary m-btn m-btn--custom m-btn--icon" data-wizard-action="prev">
+                          <Link to="/employees" className="btn btn-secondary m-btn m-btn--custom m-btn--icon" data-wizard-action="prev">
                             
                             <span>
 

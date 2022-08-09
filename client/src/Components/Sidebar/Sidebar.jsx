@@ -33,7 +33,7 @@ const Sidebar = () => {
 
 
                 <li className="m-menu__item  m-menu__item--active" aria-haspopup="true">
-                    <Link to="/addemployee" className="m-menu__link ">
+                    <Link to="/employees/addemployee" className="m-menu__link ">
                         <i className="m-menu__link-icon flaticon-line-graph"></i>
                         <span className="m-menu__link-title">
                             <span className="m-menu__link-wrap"> 
@@ -45,7 +45,7 @@ const Sidebar = () => {
 
 
                 <li className="m-menu__item  m-menu__item--active" aria-haspopup="true">
-                    <Link to="/employeelist" className="m-menu__link ">
+                    <Link to="/employees" className="m-menu__link ">
                         <i className="m-menu__link-icon flaticon-line-graph"></i>
                         <span className="m-menu__link-title">
                             <span className="m-menu__link-wrap"> 

@@ -18,6 +18,8 @@ import QuickSidebar from './Components/QuickSidebar/QuickSidebar';
 
 import AddEmployee from './Pages/AddEmployee/AddEmployee';
 import EmployeeList from './Pages/EmployeeList/EmployeeList';
+import EditEmployee from './Pages/EditEmployee/EditEmployee';
+// import EmployeeList from './Pages/EmployeeList/EmployeeList';
 // import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 
@@ -65,10 +67,14 @@ function App() {
                     <Route path="/home" element={<Home/>} />
                     <Route path="/about" element={<About/>} />
 
-                    <Route path="/employeelist" element={<EmployeeList/>} />
+                    <Route path="/employees" element={<EmployeeList/>} />
 
-                    <Route path="/addemployee" element={<AddEmployee/>} />
 
+                    <Route path="/employees/addemployee" element={<AddEmployee/>} />
+
+                    {/* employee/editEmployee */}
+
+                    <Route path='/employees/editEmployee/:id' element={<EditEmployee/>} />     
                     
 
                  
