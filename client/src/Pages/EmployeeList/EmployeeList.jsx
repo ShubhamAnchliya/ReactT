@@ -1,6 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
+import "./EmployeeList.css";
+import { FaRegEdit } from "react-icons/fa";
+import { MdDeleteForever } from "react-icons/md";
+
+import Swal from 'sweetalert2'; 
+
+
+import {  ToastContainer , Flip } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const EmployeeList = () => {
 
@@ -25,14 +34,59 @@ const EmployeeList = () => {
 		.catch((err) => {
 		  console.log(err);
 		});
-	  }
+	}
+
+	// const showToastMessage = () => {
+    //     toast.success('Success Notification !', {
+    //         position: toast.POSITION.TOP_RIGHT
+    //     });
+    // };
 	  
 	
-	  const deleteEmployee = async id  =>  {
+	//   const deleteEmployee = async id  =>  {
+	// 	console.log("deleteId", id)
+	// 	await axios.delete(`http://localhost:5000/api/employee/${id}`);
+	// 	loadEmployees();
+	//   }
+
+
+		
+	const deleteEmployee = async id  =>  {
 		console.log("deleteId", id)
-		await axios.delete(`http://localhost:5000/api/employee/${id}`);
-		loadEmployees();
+
+		Swal.fire({
+		title: 'Are you sure?',
+		text: "You won't be able to revert this!",
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Yes, delete it!'
+	  }).then((result) => {
+		if (result.isConfirmed) {
+			 axios.delete(`http://localhost:5000/api/employee/${id}`)
+			.then(res => {
+			
+				Swal.fire({
+					position: 'center',
+					icon: 'success',
+					title: 'Selected employee record has been deleted',
+					showConfirmButton: false,
+					timer: 1000
+				  })
+				  loadEmployees();
+			}
+			
+			);
+		
+
+		}
+	  })
+		// await axios.delete(`http://localhost:5000/api/employee/${id}`);
+		// loadEmployees();
 	  }
+
+	  
 
 
 
@@ -175,18 +229,36 @@ const EmployeeList = () => {
                                                 <td className='action_btn'>
 
 													<Link
-														className="btn btn-primary btn-sm "
+														className="btn ebtn btn-sm"
 														to={`/employees/editEmployee/${data._id}`}
+
+														// onClick={showToastMessage}
 													>
-														Edit
+
+													<FaRegEdit/> 
+													
+													<ToastContainer
+														position="top-right"
+														autoClose={1500}
+														hideProgressBar={false}
+														newestOnTop={false}
+														closeOnClick
+														rtl={false}
+														pauseOnFocusLoss={false}
+														draggable
+														pauseOnHover
+														transition={Flip}
+														theme= "dark"
+
+													/>
 													</Link>
 
 													<Link
-														className="btn btn-danger btn-sm "
+														className="btn dbtn btn-sm"
 														to="/employees"
 														onClick={() => deleteEmployee(data._id)}
 														>
-														Delete
+														<MdDeleteForever/>
 													</Link>
 
                                                 </td>

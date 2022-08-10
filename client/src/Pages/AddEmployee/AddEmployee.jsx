@@ -129,6 +129,8 @@ import "./AddEmployee.css";
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from "axios";
+import Swal from 'sweetalert2'; 
+
 
 const AddEmployee = () => {
 
@@ -195,6 +197,14 @@ const AddEmployee = () => {
       // setEmployee({ ...employee: "" });
 
       setEmployee('');
+
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Employee record has been saved',
+        showConfirmButton: false,
+        timer: 1000
+      })
       
     })
     .catch((err) => {
@@ -205,6 +215,18 @@ const AddEmployee = () => {
        navigate("/employees");
 
   }
+
+
+
+  // Swal.fire({
+  //   position: 'center',
+  //   icon: 'success',
+  //   title: 'Selected employee record has been deleted',
+  //   showConfirmButton: false,
+  //   timer: 1000
+  //   })
+
+
 
   return (
     
@@ -441,7 +463,7 @@ const AddEmployee = () => {
                                 <div className="col-xl-9 col-lg-9">
 
                                   <input
-                                    type="text"
+                                    type="number"
                                     className="form-control m-input"
                                     name="pincode" 
                                     placeholder="Please enter your pincode" 
@@ -479,11 +501,13 @@ const AddEmployee = () => {
                                           type="radio" 
                                           name="role"
                                           value="employee"
+                                          isSelected={role === "Employee"}
                                           id="employee"
               //  onChange={handleChange} name="gender" 
                                           // name="employee"
                                           // id="1"
-                                          // isSelected={role === "Employee"}
+                                          // value={role}
+                                        
                                           // value="Employee"
                                           onChange={InputEvent}   
                                           // value="2" 
@@ -506,7 +530,8 @@ const AddEmployee = () => {
                                           // type="radio" 
                                           // name="admin" 
                                           // id="2"
-                                          // isSelected={role === "Admin"}
+                                          // value={role}
+                                          isSelected={role === "Admin"}
                                           // value="Admin"
                                           onChange={InputEvent}   
                                           // value="2" 

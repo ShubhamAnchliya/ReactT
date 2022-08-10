@@ -3,6 +3,11 @@ import "./EditEmployee.css";
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import axios from "axios";
+import { toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/ReactToastify.css';
+import "../../../node_modules/react-toastify/dist/ReactToastify.css";
+
 
 const AddEmployee = () => {
 
@@ -77,14 +82,38 @@ const AddEmployee = () => {
       console.log("resDataMessage",res.data.message);
 
     // //   setEmployee('');
+
+
+
       
     })
     // .catch((err) => {
     //   console.log("Error couldn't add employee");
     //   console.log(err.message);
     // });
+    loadEmployeData();
+
+  
 
     navigate("/employees");
+
+
+    toast.success(' Employee record has been updated!'
+    // , {
+    //   position: "top-right",
+    //   autoClose: 2000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: false,
+    //   draggable: true,
+    //   progress: undefined,
+    //   theme: "dark"
+   
+    //   }
+      
+      );
+
+   
 
   }
 
@@ -320,7 +349,7 @@ const AddEmployee = () => {
                                 <div className="col-xl-9 col-lg-9">
 
                                   <input
-                                    type="text"
+                                    type="number"
                                     className="form-control m-input"
                                     name="pincode" 
                                     placeholder="Please enter your pincode" 
@@ -359,10 +388,12 @@ const AddEmployee = () => {
                                                 name="role"
                                                 value="employee"
                                                 id="employee"
+
+                                                
                                             //  onChange={handleChange} name="gender" 
                                                 // name="employee"
                                                 // id="1"
-                                                // isSelected={role === "Employee"}
+                                                isSelected={role === "Employee"}
                                                 // value="Employee"
                                                 onChange={InputEvent}   
                                                 // value="2" 
@@ -381,11 +412,12 @@ const AddEmployee = () => {
                                                 type="radio" 
                                                 name="role"
                                                 value="admin"
+                                                isSelected={role === "Admin"}
                                                 id="admin"
                                                 // type="radio" 
                                                 // name="admin" 
                                                 // id="2"
-                                                // isSelected={role === "Admin"}
+                                            
                                                 // value="Admin"
                                                 onChange={InputEvent}   
                                                 // value="2" 
