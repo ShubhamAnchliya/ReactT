@@ -1,0 +1,51 @@
+
+  .addUser .addUser-form {
+    width: 40%;
+    /* height: 25.4rem; */
+    margin-left: 30%;
+
+    height: 35rem;
+
+    border: 3px solid  #228be6;
+    padding: 35px;
+    background: #fff;
+
+  }
+  .addUser .addUser-form .form-group {
+    padding-bottom: 8px;
+    margin-left: 45px;
+    width: 80%;  
+}
+
+
+label {
+    margin-bottom: 3px
+}
+  .addUser .addUser-form input, .addUser .addUser-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+  }
+
+
+  .addUser .addUser-form input {
+      margin-bottom: 5px;
+  }
+
+
+  .addUser .addUser-form textarea {
+    padding: 10px 12px;
+  }
+  .addUser .addUser-form .buttons {
+    /* background:  #228be6; */
+
+    border: 0;
+    /* padding: 10px 24px; */
+    /* color: #fff; */
+    transition: 0.4s;
+    /* border-radius: 4px; */
+
+  margin-top: 2rem;
+  }
+ 
+
