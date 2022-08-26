@@ -6,6 +6,8 @@ const dbConfig = require('./config/database.js');
 
 const employee = require("./routes/employeeRoute.js")
 
+// const user = require("./routes/userRoute.js")
+
 const dotenv = require("dotenv");
 
 dotenv.config();
@@ -27,6 +29,9 @@ app.use(express.json({extended: false}));
 app.get('/', (req, res) => res.send('Server is running') );
 
 app.use("/api", employee);
+
+// app.use("/api", user);
+
 
 
 app.listen(PORT, ()  => 

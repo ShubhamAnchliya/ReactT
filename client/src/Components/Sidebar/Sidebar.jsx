@@ -45,6 +45,31 @@ const Sidebar = () => {
 
 
                 <li className="m-menu__item  m-menu__item--active" aria-haspopup="true">
+                    <Link to="employees/uploadimg" className="m-menu__link ">
+                        <i className="m-menu__link-icon flaticon-line-graph"></i>
+                        <span className="m-menu__link-title">
+                            <span className="m-menu__link-wrap"> 
+                                <span className="m-menu__link-text">Upload Image </span>
+                            </span>
+                        </span>
+                    </Link>
+                </li>
+
+                <li className="m-menu__item  m-menu__item--active" aria-haspopup="true">
+                    <Link to="employees/viewimg" className="m-menu__link ">
+                        <i className="m-menu__link-icon flaticon-line-graph"></i>
+                        <span className="m-menu__link-title">
+                            <span className="m-menu__link-wrap"> 
+                                <span className="m-menu__link-text">Show Image </span>
+                            </span>
+                        </span>
+                    </Link>
+                </li>
+
+
+
+
+                <li className="m-menu__item  m-menu__item--active" aria-haspopup="true">
                     <Link to="/employees" className="m-menu__link ">
                         <i className="m-menu__link-icon flaticon-line-graph"></i>
                         <span className="m-menu__link-title">

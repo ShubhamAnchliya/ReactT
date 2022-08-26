@@ -6,7 +6,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Sidebar from './Components/Sidebar/Sidebar';
 import SubHeader from './Components/SubHeader/SubHeader';
-import MainRoutes from './Components/MainRoutes/MainRoutes';
+// import MainRoutes from './Components/MainRoutes/MainRoutes';
 import { Route, Routes } from 'react-router-dom';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min.js';
@@ -14,11 +14,14 @@ import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
 
-import QuickSidebar from './Components/QuickSidebar/QuickSidebar';
+// import QuickSidebar from './Components/QuickSidebar/QuickSidebar';
 
 import AddEmployee from './Pages/AddEmployee/AddEmployee';
 import EmployeeList from './Pages/EmployeeList/EmployeeList';
 import EditEmployee from './Pages/EditEmployee/EditEmployee';
+
+import ShowImg from './Pages/ShowImg/ShowImg';
+import UploadImg from './Pages/UploadImg/UploadImg';
 // import EmployeeList from './Pages/EmployeeList/EmployeeList';
 // import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
@@ -72,11 +75,12 @@ function App() {
 
                     <Route path="/employees/addemployee" element={<AddEmployee/>} />
 
-                    {/* employee/editEmployee */}
+                    <Route path='/employees/editemployee/:id' element={<EditEmployee/>} />     
 
-                    <Route path='/employees/editEmployee/:id' element={<EditEmployee/>} />     
                     
+                    <Route path="/employees/uploadimg" element={<UploadImg/>} />
 
+                    <Route path="/employees/viewimg" element={<ShowImg/>} />
                  
 
                     <Route path="/*" element={<ErrorPage/>} />

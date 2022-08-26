@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { data } from 'jquery';
+// import { data } from 'jquery';
 import React, { useEffect, useState } from 'react'
 
 const EmployeeList1 = () => {

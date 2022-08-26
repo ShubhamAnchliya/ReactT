@@ -59,15 +59,16 @@ const AddEmployee = () => {
   };
 
   useEffect(() => {
+    const loadEmployeData = async  () => {
+      const res = await axios.get(`http://localhost:5000/api/employee/${id}` );
+      console.log("getEmpres.data", res.data.employee);
+      setEmployee(res.data.employee); 
+    };
     // console.log("Employeedata use_effect");
     loadEmployeData();
-  }, []);
+  },[id]);
 
-  const loadEmployeData = async  () => {
-    const res = await axios.get(`http://localhost:5000/api/employee/${id}` );
-    console.log("getEmpres.data", res.data.employee);
-    setEmployee(res.data.employee); 
-  };
+  
 
  
   const formSubmit =  (e) => {
@@ -91,7 +92,7 @@ const AddEmployee = () => {
     //   console.log("Error couldn't add employee");
     //   console.log(err.message);
     // });
-    loadEmployeData();
+    // loadEmployeData();
 
   
 
