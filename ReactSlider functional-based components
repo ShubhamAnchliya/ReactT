@@ -1,0 +1,44 @@
+import React, { useState } from 'react';
+import Slider from 'react-slick';
+import './style.css'
+import { useRef } from 'react'
+
+export default function App() {
+  const [nav1, setNav1] = useState();
+  const [nav2, setNav2] = useState();
+  const customeSlider = useRef();
+
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    arrows: false,
+    }
+
+  const previous = () => {
+    customeSlider.current.slickNext();
+  };
+
+  const next = () => {
+    customeSlider.current.slickPrev();
+  };
+
+  return (
+    <div>
+      <button onClick={next}>Next</button>
+      <button onClick={previous}>Previous</button>
+      <Slider {...settings} ref={customeSlider}>
+        <div>One</div>
+        <div>Two</div>
+        <div>Theree</div>
+        <div>Four</div>
+        <div>Five</div>
+      </Slider>
+    </div>
+  );
+}
